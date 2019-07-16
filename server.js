@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 
-app.get('/locations', (request, response) => {
+app.get('/location', (request, response) => {
   const geoData = require('./data/geo.json');
   const location = new Location(request.query.data, geoData);
   response.send(location);
@@ -22,7 +22,7 @@ function Location(query, geoData) {
   this.longitude = geoData.results[0].geometry.location.lng;
 }
 
-app.get('/weathers', (request, response) => {
+app.get('/weather', (request, response) => {
   console.log('in weather')
   const weatherData = require('./data/darksky.json');
   let weatherArr =[];

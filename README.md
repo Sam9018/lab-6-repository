@@ -19,24 +19,24 @@ Actual time needed to complete: 10 mins
 
 Number and name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 min
 
-Start time: _____
+Start time: 10:40 am
 
-Finish time: _____
+Finish time: 11:30 am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 50 min
 
 
 Number and name of feature: Weather
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 min
 
-Start time: _____
+Start time: 11:30 am
 
-Finish time: _____
+Finish time: 12:30 pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1h
 
 
 

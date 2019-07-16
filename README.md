@@ -3,6 +3,53 @@
 **Author**: Sam Gnuschke, Eric Huang
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
+
+
+Number and name of feature: Repo set up
+
+Estimate of time needed to complete: 20
+
+Start time: 10:15 am
+
+Finish time: 10:25 am
+
+Actual time needed to complete: 10 mins
+
+
+
+Number and name of feature: Locations
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+
+Number and name of feature: Weather
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+
+
+Number and name of feature: Error
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 

@@ -10,9 +10,16 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 
 app.get('/location', (request, response) => {
-  const geoData = require('./data/geo.json');
-  const location = new Location(request.query.data, geoData);
-  response.send(location);
+  try {
+    if ( request.query.data !== 'Lynnwood' ){
+      throw { status:500, errorMsg: 'No data on search query.' };
+    }
+    const geoData = require('./data/geo.json');
+    const location = new Location(request.query.data, geoData);
+    response.send(location);
+  } catch (error) {
+    response.status(error.status).send(error);
+  }
 })
 
 function Location(query, geoData) {
@@ -23,49 +30,27 @@ function Location(query, geoData) {
 }
 
 app.get('/weather', (request, response) => {
-  console.log('in weather')
-  const weatherData = require('./data/darksky.json');
-  let weatherArr =[];
-  for(var i=0; i < weatherData.daily.data.length; i++) {
-    weatherArr.push(
-      new Weather(request.query.data, weatherData.daily.data[i].time, weatherData.daily.data[i].summary)
-    );
-
+  try {
+    if ( request.query.data !== 'LosAngeles' ){
+      throw { status:500, errorMsg: 'No data on search query.'};
+    }
+    const weatherData = require('./data/darksky.json');
+    let weatherArr =[];
+    for(var i=0; i < weatherData.daily.data.length; i++) {
+      weatherArr.push(
+        new Weather(request.query.data, weatherData.daily.data[i].time, weatherData.daily.data[i].summary)
+      );
+    }
+    response.send(weatherArr);
+  } catch (error) {
+    response.status(error.status).send(error);
   }
-  response.send(weatherArr);
 })
 
 function Weather(query, time, summary) {
   this.weatherQuery = query;
   this.time = time;
   this.summary = summary;
-  // this.time = weatherData.daily.data[i].time;
-  // this.forecast = weatherData.daily.data[].summary;
 }
 
-
-
-
-
 app.listen(PORT,() => console.log(`Listening on port ${PORT}`));
-
-
-
-
-// app.use(express.static('./public'));
-
-// app.get('/hello', (request, response) => {
-//   response.status(200).send('Hello');
-// });
-
-// app.get('/data', (request, response) => {
-//   let airplanes = {
-//     departure: Date.now(),
-//     canFly: true,
-//     pilot: 'Well Trained'
-//   }
-//   response.status(200).json(airplanes);
-// });
-
-// app.use('*', (request, response) => response.send('Sorry, that route does not exist.'))
-
